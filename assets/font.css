@@ -1,0 +1,23 @@
+h1 {
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+h3 {
+    text-align: center
+}
+
+
+.elka_title {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
