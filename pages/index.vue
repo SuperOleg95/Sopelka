@@ -19,6 +19,7 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                 if (!response.ok) {
                         throw new Error('Network response was not ok');
                 }
+                state.textMessage = undefined
                 return response.json();
         })
         .then(data => {
@@ -79,6 +80,7 @@ internal.thoughtsCount = thoughts[0].count
                 </div>
         </UForm>
         <span class="absolute bottom-2 right-2">Version 1.20, 09.01.25</span>
+        <UNotifications />
     </div>    
 </main>
 </template>
