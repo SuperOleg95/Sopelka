@@ -1,34 +1,40 @@
 <script setup lang="ts">
-const isOpen = ref(false)
+import { useInternalStore } from '~/stores/internal';
 
-const links = [{
-  label: 'Занятия',
-  icon: 'i-heroicons-light-bulb',
-  to: '/entertainment',
-  badge: 3
-}, {
-  label: 'Еда',
-  icon: 'i-heroicons-cake',
-  to: '/food',
-  badge: 4
-}, {
-  label: 'Как это сделано',
-  icon: 'i-heroicons-window',
-  to: '/faq',
-},
-{
-  label: 'Мудрые мыли',
-  icon: 'i-heroicons-numbered-list',
-  to: '/thoughts',
-  badge: 10
-},
-{
-  label: 'Истории',
-  icon: 'i-heroicons-pencil',
-  to: '/stories',
-  badge: 2
-},  
-]
+const isOpen = ref(false)
+const internal = useInternalStore()
+
+const links = computed(() => {
+    return [{
+    label: 'Занятия',
+    icon: 'i-heroicons-light-bulb',
+    to: '/entertainment',
+    badge: internal.entertainmentCount
+  }, {
+    label: 'Еда',
+    icon: 'i-heroicons-cake',
+    to: '/food',
+    badge: internal.foodCount
+  }, {
+    label: 'Как это сделано',
+    icon: 'i-heroicons-window',
+    to: '/faq',
+    badge: internal.faqCount
+  },
+  {
+    label: 'Мудрые мыли',
+    icon: 'i-heroicons-numbered-list',
+    to: '/thoughts',
+    badge: internal.thoughtsCount
+  },
+  {
+    label: 'Истории',
+    icon: 'i-heroicons-pencil',
+    to: '/stories',
+    badge: internal.storyCount
+  },  
+]})
+
 </script>
 
 <template>

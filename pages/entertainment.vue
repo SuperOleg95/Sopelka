@@ -1,9 +1,4 @@
 <script setup lang="ts">
-const contentQuery = queryContent("entertainment").find()
-console.log(contentQuery)
-// for (const item in contentQuery) {
-//     console.log(item._path)
-// }
 </script>
 
 <template>

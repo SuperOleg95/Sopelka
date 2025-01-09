@@ -28,6 +28,17 @@ async function onSubmit(event: FormSubmitEvent<any>) {
         });
 }
 
+const internal = useInternalStore()
+const ent = await useAsyncData('home', () => queryContent('entertainment').count())
+const food = await useAsyncData('home', () => queryContent('food').count())
+const stories = await useAsyncData('home', () => queryContent('stories').count())
+
+internal.entertainmentCount = ent.data.value || 1
+internal.foodCount = food.data.value || 1
+internal.faqCount = 4
+internal.thoughtsCount = 2
+internal.storyCount = stories.data.value || 1
+
 </script>
 
 <template>

@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
   ],
   css: ['~/assets/font.css', '~/assets/polaroid.css'],
 })
