@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import FoodCard from '~/components/foodCard.vue';
 import type { FormSubmitEvent } from '#ui/types'
+import type { RefSymbol } from '@vue/reactivity';
 
 const token = '7640119131:AAHd4bQ-tvIqRr0w2pD_if2yNKGS94F4ypk';
 const chatId = '475478346';
@@ -29,15 +30,16 @@ async function onSubmit(event: FormSubmitEvent<any>) {
 }
 
 const internal = useInternalStore()
-const ent = await useAsyncData('home', () => queryContent('entertainment').count())
-const food = await useAsyncData('home', () => queryContent('food').count())
-const stories = await useAsyncData('home', () => queryContent('stories').count())
+const ent = await queryContent('entertainment').count()
+const food = await queryContent('/food').count()
+const stories = await queryContent('/stories').count()
+const thoughts = await queryContent('/thoughts').find()
 
-internal.entertainmentCount = ent.data.value || 1
-internal.foodCount = food.data.value || 1
+internal.entertainmentCount = ent
+internal.foodCount = food
 internal.faqCount = 4
-internal.thoughtsCount = 2
-internal.storyCount = stories.data.value || 1
+internal.storyCount = stories
+internal.thoughtsCount = thoughts[0].count
 
 </script>
 
@@ -76,6 +78,7 @@ internal.storyCount = stories.data.value || 1
                         <UIcon name="i-heroicons-envelope-open" class="w-6 h-6 text-black" />                      
                 </div>
         </UForm>
-    </div>
+        <span class="absolute bottom-2 right-2">Version 1.20, 09.01.25</span>
+    </div>    
 </main>
 </template>
