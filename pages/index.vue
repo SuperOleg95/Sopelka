@@ -31,6 +31,9 @@ async function onSubmit(event: FormSubmitEvent<any>) {
 </script>
 
 <template>
+<head>
+  <meta name="color-scheme" content="light">
+</head>
 <main class="flex bg-white h-lvh">
     <div class="flex flex-col grow px-4 space-y-4">
         <hero />
@@ -46,7 +49,7 @@ async function onSubmit(event: FormSubmitEvent<any>) {
                         <span class="text-black font-mono">И пиши что ты выбрала в окошке</span>
                         <UIcon name="i-heroicons-arrow-uturn-down" class="w-8 h-8 text-black" />
                 </div>
-                <UFormGroup name="password">
+                <UFormGroup name="password" class="dark:text-dark">
                         <UInput color="emerald" variant="outline" size="xl" placeholder="Например, Хочу барни" v-model="state.textMessage" />
                 </UFormGroup>
 

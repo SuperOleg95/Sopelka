@@ -2,11 +2,6 @@
 const isOpen = ref(false)
 
 const links = [{
-  label: 'Истории',
-  icon: 'i-heroicons-pencil',
-  to: '/stories',
-  badge: 2
-},  {
   label: 'Занятия',
   icon: 'i-heroicons-light-bulb',
   to: '/entertainment',
@@ -17,15 +12,22 @@ const links = [{
   to: '/food',
   badge: 4
 }, {
-  label: 'Мудрые мыли',
-  icon: 'i-heroicons-numbered-list',
-  to: '/thoughts',
-  badge: 10
-}, {
   label: 'Как это сделано',
   icon: 'i-heroicons-window',
   to: '/faq',
 },
+{
+  label: 'Мудрые мыли',
+  icon: 'i-heroicons-numbered-list',
+  to: '/thoughts',
+  badge: 10
+},
+{
+  label: 'Истории',
+  icon: 'i-heroicons-pencil',
+  to: '/stories',
+  badge: 2
+},  
 ]
 </script>
 
