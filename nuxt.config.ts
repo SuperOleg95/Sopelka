@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
+    '@nuxthq/studio',
   ],
   css: ['~/assets/font.css', '~/assets/polaroid.css'],
 })
