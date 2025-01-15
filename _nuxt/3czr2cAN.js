@@ -1,0 +1,1 @@
+import{_ as t}from"./DYkyw7qe.js";import{_ as n}from"./DlAUqK2U.js";import{c,z as r}from"./jQuSrB0D.js";const _={};function e(s,i){const o=t;return c(),r(o,{to:"/",size:"xl",variant:"solid",color:"primary",class:"absolute bottom-5 right-5 z-10",icon:"i-heroicons-home-solid"})}const l=n(_,[["render",e]]);export{l as _};
